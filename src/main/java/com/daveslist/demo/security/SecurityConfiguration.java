@@ -23,6 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/avilableroom/**","/detail/**").permitAll()
+                .antMatchers("/check1","/check2").access("hasAnyAuthority('                                                                         ','USER')")
                 .antMatchers("/","/addroom","/listadmin")
 
 

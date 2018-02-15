@@ -29,10 +29,13 @@ public class Room {
 
     private String privateBathroom;
 
-    private boolean isRented;
+    private boolean rented;
 
     public Room(){
-        isRented=false;
+
+        rented=false;
+
+
     }
 
 
@@ -117,10 +120,18 @@ public class Room {
     }
 
     public boolean isRented() {
-        return isRented;
+        return rented;
     }
 
     public void setRented(boolean rented) {
-        isRented = rented;
+        this.rented = rented;
     }
+
+    public void changeRented(String rent){
+        if(rent.equals("yes")){
+            setRented(true);
+        }else {
+            setRented(false);
+        }
+}
 }

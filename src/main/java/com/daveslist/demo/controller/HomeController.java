@@ -30,6 +30,7 @@ public class HomeController {
 
         model.addAttribute("room",room);
 
+
         return "roomform";
     }
 
@@ -44,8 +45,8 @@ public class HomeController {
     }
 
     @GetMapping("/avilableroom")
-    public String list(){
-
+    public String list(Model model){
+       model.addAttribute("rooms",roomRepository.findByRentedTrue());
 
         return "avilableroom";
 
@@ -61,8 +62,8 @@ public class HomeController {
     }
 
     @GetMapping("/listadmin")
-    public String listAdmin(){
-
+    public String listAdmin(Model model){
+     model.addAttribute("rooms",roomRepository.findAll());
 
         return "listadmin";
 
